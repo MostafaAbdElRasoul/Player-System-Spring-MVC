@@ -2,6 +2,8 @@ package com.spring.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +12,12 @@ import com.spring.model.Player;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
-
+	@Autowired
 	private PlayerDAO playerDao;
 	
-	@Autowired
-	public PlayerServiceImpl(PlayerDAO playerdao) {
-		this.playerDao = playerdao;
-	}
 
 	@Override
+	@Transactional
 	public List<Player> allPlayers() {
 		return playerDao.getPlayers();
 	}
