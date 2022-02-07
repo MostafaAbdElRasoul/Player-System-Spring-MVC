@@ -1,5 +1,10 @@
 package com.spring.dao;
 
-public interface PlayerDAO {
+import java.util.List;
 
+import com.spring.model.Player;
+
+public interface PlayerDAO {
+	
+	public List<Player> getPlayers();
 }
