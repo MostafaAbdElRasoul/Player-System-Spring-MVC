@@ -27,6 +27,14 @@ public class PlayerDAOImpl implements PlayerDAO {
 		
 		return query.getResultList();
 	}
+
+	@Override
+	public void addPlayer(Player player) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(player);
+		
+	}
+	
 	
 	
 	

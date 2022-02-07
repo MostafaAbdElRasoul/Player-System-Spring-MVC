@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.spring.model.Player;
 import com.spring.service.PlayerService;
 
+
 //http://localhost:8082/Player/
 @Controller
 @RequestMapping("/kora")
@@ -27,6 +28,11 @@ public class PlayerController {
 		model.addAttribute("players", players);
 		return "kora-players";
 	}
-
+	
+	//http://localhost:8082/Player/kora/add
+	@GetMapping("/add")
+	public String savePgae() {
+		return "addPlayer";
+	}
 	
 }

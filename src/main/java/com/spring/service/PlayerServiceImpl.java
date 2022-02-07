@@ -12,14 +12,21 @@ import com.spring.model.Player;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
+	
 	@Autowired
 	private PlayerDAO playerDao;
 	
-
 	@Override
 	@Transactional
 	public List<Player> allPlayers() {
 		return playerDao.getPlayers();
 	}
+
+	@Override
+	@Transactional
+	public void savePlayer(Player player) {
+		playerDao.addPlayer(player);
+	}
+
 
 }
