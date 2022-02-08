@@ -37,7 +37,7 @@ public class PlayerController {
 		model.addAttribute("player",new Player());
 		return "addPlayer";
 	}
-	@GetMapping("/savePlayer")
+	@PostMapping("/savePlayer")
 	public String addPlayer(@ModelAttribute("player") Player player) {
 		playerService.savePlayer(player);
 		return "redirect:/kora/players";

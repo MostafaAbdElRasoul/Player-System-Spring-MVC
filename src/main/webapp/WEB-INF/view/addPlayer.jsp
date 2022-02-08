@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<fo:form action="savePlayer" modelAttribute="player" method="GET">
+	<fo:form action="savePlayer" modelAttribute="player" method="POST">
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="name">Name</label>
