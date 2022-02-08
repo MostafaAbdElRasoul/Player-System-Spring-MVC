@@ -16,6 +16,7 @@
 <body>
 	<fo:form action="savePlayer" modelAttribute="player" method="POST">
 		<div class="form-row">
+				<fo:hidden path="id"/>
 			<div class="form-group col-md-6">
 				<label for="name">Name</label>
 				<fo:input path="name" class="form-control" id="name" placeholder="Name" />
@@ -36,7 +37,7 @@
 				placeholder="address" />
 		</div>
 
-		<button type="submit" class="btn btn-primary">Add</button>
+		<button type="submit" class="btn btn-primary">Done</button>
 	</fo:form>
 
 </body>

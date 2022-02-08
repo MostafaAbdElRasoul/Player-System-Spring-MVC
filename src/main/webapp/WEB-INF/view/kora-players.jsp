@@ -30,12 +30,15 @@
 				<tr>
 					<td>${player.id}</td>
 					<td>${player.name}</td>
-					<td>@${player.number}</td>
+					<td>${player.number}</td>
 					<td>${player.phone}</td>
 					<td>${player.address}</td>
 					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
+						<c:url var="editPlayer" value="/kora/showPlayer">
+							<c:param name="playerId" value="${player.id}"></c:param>
+						</c:url>
+						<a href="${editPlayer}" type="button" class="btn btn-primary">Edit</a>
+						<a href="" type="button" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 
