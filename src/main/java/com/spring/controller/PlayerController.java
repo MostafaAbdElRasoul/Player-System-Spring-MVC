@@ -38,15 +38,26 @@ public class PlayerController {
 		model.addAttribute("player",new Player());
 		return "addPlayer";
 	}
+	
+	//http://localhost:8082/Player/kora/savePlayer
 	@PostMapping("/savePlayer")
 	public String addPlayer(@ModelAttribute("player") Player player) {
 		playerService.savePlayer(player);
 		return "redirect:/kora/players";
 	}
+	
+	//http://localhost:8082/Player/kora/showPlayer
 	@GetMapping("/showPlayer")
 	public String showPlayer(@RequestParam("playerId")int id, Model model) {
 		Player player = playerService.showPlayer(id);
 		model.addAttribute("player", player);
 		return "addPlayer";
+	}
+	
+	//http://localhost:8082/Player/kora/deletePlayer
+	@GetMapping("/deletePlayer")
+	public String deletePlayer(@RequestParam("playerId")int id) {
+		playerService.deletePlayer(id);
+		return "redirect:/kora/players";
 	}
 }

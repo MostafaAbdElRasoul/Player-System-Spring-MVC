@@ -37,8 +37,11 @@
 						<c:url var="editPlayer" value="/kora/showPlayer">
 							<c:param name="playerId" value="${player.id}"></c:param>
 						</c:url>
+							<c:url var="deletePlayer" value="/kora/deletePlayer">
+							<c:param name="playerId" value="${player.id}"></c:param>
+						</c:url>
 						<a href="${editPlayer}" type="button" class="btn btn-primary">Edit</a>
-						<a href="" type="button" class="btn btn-danger">Delete</a>
+						<a href="${deletePlayer}" type="button" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 
