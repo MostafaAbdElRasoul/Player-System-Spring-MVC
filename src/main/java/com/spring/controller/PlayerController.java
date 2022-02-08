@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.model.Player;
@@ -31,8 +33,14 @@ public class PlayerController {
 	
 	//http://localhost:8082/Player/kora/add
 	@GetMapping("/add")
-	public String savePgae() {
+	public String savePgae(Model model) {
+		model.addAttribute("player",new Player());
 		return "addPlayer";
+	}
+	@GetMapping("/savePlayer")
+	public String addPlayer(@ModelAttribute("player") Player player) {
+		playerService.savePlayer(player);
+		return "redirect:/kora/players";
 	}
 	
 }

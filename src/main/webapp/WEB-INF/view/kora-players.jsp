@@ -43,5 +43,6 @@
 
 		</tbody>
 	</table>
+	<a href="add" type="submit" class="btn btn-primary">Add</a>
 </body>
 </html>
